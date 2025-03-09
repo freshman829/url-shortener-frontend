@@ -9,7 +9,7 @@ function App() {
     e.preventDefault();
     setLoading(true);
 
-    const response = await fetch('https://17fostsrjb.execute-api.us-east-2.amazonaws.com/dev/shorten', {
+    const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/shorten`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ originalUrl }),
